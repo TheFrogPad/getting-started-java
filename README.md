@@ -1,3 +1,5 @@
+[![wercker status](https://app.wercker.com/status/66210606b8d3610fd34e8ea8e82d2bf4/s/master "wercker status")](https://app.wercker.com/project/byKey/66210606b8d3610fd34e8ea8e82d2bf4)
+
 # getting-started-java
 
 A sample application in Java for wercker.

@@ -29,3 +29,16 @@ build:
         name: gradle build
         code: |
           ./gradlew --full-stacktrace -q --project-cache-dir=$WERCKER_CACHE_DIR build
+    - script:
+        name: save build jar
+        code: |
+          cp build/libs/*.jar $WERCKER_CACHE_DIR
+          cp build/libs/*.jar $WERCKER_OUTPUT_DIR
+    - script:
+        name: OWASP Dependency-Check
+        code: |
+          ./gradlew --project-cache-dir=$WERCKER_CACHE_DIR dependencyCheckAnalyze
+    - script:
+        name: save build jar
+        code: |
+          cp build/reports/*.* $WERCKER_OUTPUT_DIR

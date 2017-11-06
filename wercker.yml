@@ -44,4 +44,4 @@ build:
     - thefrogpad/owasp-dependency-check:
         project: demo
         format: ALL
-        fail_on_cvss: 5.0
+        fail_on_cvss: "5.0"

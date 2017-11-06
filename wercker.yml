@@ -29,11 +29,14 @@ build:
         name: gradle build
         code: |
           ./gradlew --full-stacktrace -q --project-cache-dir=$WERCKER_CACHE_DIR build
+          echo "cp build/libs/*.jar $WERCKER_CACHE_DIR"
           cp build/libs/*.jar $WERCKER_CACHE_DIR
     - script:
         name: environment details
         code: |
           env
+          echo "ls -alF $WERCKER_CACHE_DIR"
+          ls -alF $WERCKER_CACHE_DIR
     ### Integrated with gradle plugin
     # - script:
     #     name: OWASP Dependency-Check

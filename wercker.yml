@@ -34,8 +34,14 @@ build:
         name: environment details
         code: |
           env
-    - script:
-        name: OWASP Dependency-Check
-        code: |
-          ./gradlew --project-cache-dir=$WERCKER_CACHE_DIR dependencyCheckAnalyze
-          cp build/reports/*.* $WERCKER_CACHE_DIR
+    ### Integrated with gradle plugin
+    # - script:
+    #     name: OWASP Dependency-Check
+    #     code: |
+    #       ./gradlew --project-cache-dir=$WERCKER_CACHE_DIR dependencyCheckAnalyze
+    #       cp build/reports/*.* $WERCKER_CACHE_DIR
+    ### Use wercker Step
+    - thefrogpad/owasp-dependency-check:
+        project: demo
+        format: ALL
+        fail_on_cvss: 5.0

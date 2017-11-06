@@ -30,7 +30,8 @@ repositories {
 
 dependencyCheck {
 	format = 'ALL'
-	failBuildOnCVSS = 5
+        // FIXME: Generate report rather than fail build based on CVSS score
+	failBuildOnCVSS = 11
 }
 //
 // Run depedency-check standalone using 'gradle dependencyCheckAnalyze'

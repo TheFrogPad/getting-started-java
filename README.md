@@ -19,6 +19,19 @@ Then when running the wercker CLI specify:
 wercker --environment /path/to/environment.txt build
 ```
 
+## HTTPS Proxy for gradle
+
+To run the gradle build with a proxy server, update the properties file in ~/.gradle or create a gradle.properties file in the root of the project:
+
+```
+systemProp.http.proxyHost=proxy.company.com
+systemProp.http.proxyPort=80
+systemProp.http.nonProxyHosts=*.company.com|localhost|127.0.0.1
+systemProp.https.proxyHost=proxy.company.com
+systemProp.https.proxyPort=80
+systemProp.https.nonProxyHosts=*.company.com|localhost|127.0.0.1
+```
+
 # OWASP dependency-check
 
 See [https://www.owasp.org/index.php/OWASP_Dependency_Check](https://www.owasp.org/index.php/OWASP_Dependency_Check) or the [documentation on GitHub](https://jeremylong.github.io/DependencyCheck/)

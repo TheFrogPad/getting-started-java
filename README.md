@@ -2,7 +2,7 @@
 
 # NOTE
 
-The original wercker sample has been update in this fork to use the OWSAP dependency-check tool as a step in the `build` pipeline.
+The [wercker getting started with Java sample](https://github.com/wercker/getting-started-java) has been updated in this fork to use the OWSAP dependency-check tool as a step in the `build` pipeline. There is also an option to use the gradle plugin based on the updates to the orginal `build.gradle` file.
 
 ## HTTPS Proxy for wercker CLI
 
@@ -18,6 +18,17 @@ Then when running the wercker CLI specify:
 ```
 wercker --environment /path/to/environment.txt build
 ```
+
+# OWASP dependency-check
+
+See [https://www.owasp.org/index.php/OWASP_Dependency_Check](https://www.owasp.org/index.php/OWASP_Dependency_Check) or the [documentation on GitHub](https://jeremylong.github.io/DependencyCheck/)
+
+# TODO
+
+- Abstract out the version of OWASP dependency-check that the Step uses
+- Additional Step parameters that map to OWASP dependency-check parameters
+- Look into the handling for Step failures when --failOnCVSS is below 10
+- ...
 
 # getting-started-java
 

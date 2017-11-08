@@ -1,8 +1,12 @@
 [![wercker status](https://app.wercker.com/status/66210606b8d3610fd34e8ea8e82d2bf4/m/ "wercker status")](https://app.wercker.com/project/byKey/66210606b8d3610fd34e8ea8e82d2bf4)
 
-# NOTE
+# Overview
 
-The [wercker getting started with Java sample](https://github.com/wercker/getting-started-java) has been updated in this fork to use the OWSAP dependency-check tool as a step in the `build` pipeline. There is also an option to use the gradle plugin based on the updates to the orginal `build.gradle` file.
+The [wercker getting started with Java sample](https://github.com/wercker/getting-started-java) has been updated in this fork to use the OWSAP dependency-check tool as a step in the `security-scan` pipeline. There is also an option to use the gradle plugin based on the updates to the orginal `build.gradle` file in the `build` pipeline.
+
+The wercker application for this fork has a workflow that triggers the `security-scan` pipeline after the `build` pipeline completes.
+
+Also, the GitHub status is updated by wercker such that each commit will indicate the result the pipelines.
 
 ## HTTPS Proxy for wercker CLI
 

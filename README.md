@@ -6,7 +6,7 @@ The [wercker getting started with Java sample](https://github.com/wercker/gettin
 
 The wercker application for this fork has a workflow that triggers the `security-scan` pipeline after the `build` pipeline completes.
 
-Also, the GitHub status is updated by wercker such that each commit will indicate the result the pipelines.
+Also, the GitHub status is updated by wercker such that each commit will indicate the result of the pipelines.
 
 ## HTTPS Proxy for wercker CLI
 
@@ -20,7 +20,7 @@ X_HTTPS_PROXY_PORT="80"
 Then when running the wercker CLI specify:
 
 ```
-wercker --environment /path/to/environment.txt build
+wercker --environment /path/to/environment.txt security-scan
 ```
 
 ## HTTPS Proxy for gradle

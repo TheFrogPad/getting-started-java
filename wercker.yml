@@ -38,6 +38,26 @@ build:
           env
           echo "% ls -alF $WERCKER_CACHE_DIR"
           ls -alF $WERCKER_CACHE_DIR
+
+    ### Run dependency-check using gradle plugin with modified build.gradle
+    # - script:
+    #     name: OWASP Dependency-Check
+    #     code: |
+    #       ./gradlew --project-cache-dir=$WERCKER_CACHE_DIR dependencyCheckAnalyze
+    #       echo "% cp build/reports/*.* $WERCKER_CACHE_DIR"
+    #       cp build/reports/*.* $WERCKER_CACHE_DIR
+
+# security scan definition
+security-scan:
+  # The steps that will run the security scanner to check for libraries with reported CVEs
+  steps:
+    - script:
+        name: environment details
+        code: |
+          echo "% env"
+          env
+          echo "% ls -alF $WERCKER_CACHE_DIR"
+          ls -alF $WERCKER_CACHE_DIR
     - thefrogpad/owasp-dependency-check:
         project: demo
         scan: $WERCKER_CACHE_DIR/demo-1.0.jar
@@ -52,11 +72,3 @@ build:
           ls -alF $WERCKER_CACHE_DIR/owasp
           echo "% cat $WERCKER_CACHE_DIR/dependency-check-vulnerability.html"
           cat $WERCKER_CACHE_DIR/dependency-check-vulnerability.html
-
-    ### Run dependency-check using gradle plugin with modified build.gradle
-    # - script:
-    #     name: OWASP Dependency-Check
-    #     code: |
-    #       ./gradlew --project-cache-dir=$WERCKER_CACHE_DIR dependencyCheckAnalyze
-    #       echo "% cp build/reports/*.* $WERCKER_CACHE_DIR"
-    #       cp build/reports/*.* $WERCKER_CACHE_DIR

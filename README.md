@@ -20,7 +20,7 @@ X_HTTPS_PROXY_PORT="80"
 Then when running the wercker CLI specify:
 
 ```
-wercker --environment /path/to/environment.txt security-scan
+wercker --environment /home/crperez/proxy_env.txt build --pipeline security-scan
 ```
 
 ## HTTPS Proxy for gradle

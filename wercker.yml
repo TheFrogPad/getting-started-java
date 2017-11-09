@@ -60,9 +60,9 @@ security-scan:
           ls -alF $WERCKER_CACHE_DIR
     - thefrogpad/owasp-dependency-check:
         project: demo
-        scan: $WERCKER_CACHE_DIR
+        scan: $WERCKER_CACHE_DIR/demo-1.0.jar
         format: ALL
-        fail_on_cvss: "5.0"
+        fail_on_cvss: "4"
     - script:
         name: OWASP dependency-check details
         code: |

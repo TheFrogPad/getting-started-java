@@ -2,13 +2,13 @@
 
 # Overview
 
-The [wercker getting started with Java sample](https://github.com/wercker/getting-started-java) has been updated in this fork to use the OWSAP dependency-check tool as a step in the `security-scan` pipeline. There is also an option to use the gradle plugin based on the updates to the orginal `build.gradle` file in the `build` pipeline.
+The [wercker getting started with Java sample](https://github.com/wercker/getting-started-java) has been updated in this forked copy to [use the OWSAP dependency-check tool](https://www.owasp.org/index.php/OWASP_Dependency_Check) as a step in the `security-scan` pipeline.
 
-The wercker application for this fork has a workflow that triggers the `security-scan` pipeline after the `build` pipeline completes.
+There is also an option to use the OWASP supplied gradle plugin based on the updates made to the orginal `build.gradle` file in the `build` pipeline.
 
-Also, the GitHub status is updated by wercker such that each commit will indicate the result of the pipelines.
+The wercker application for this fork has a wercker workflow that triggers the `security-scan` pipeline after the `build` pipeline completes. In addition, the GitHub status is updated by wercker such that each commit will indicate the result of the pipelines.
 
-## HTTPS Proxy for wercker CLI
+## HTTPS Proxy for dependency-check with wercker CLI
 
 When building locally with the wercker CLI, a proxy server and proxy port can be specified in the environment file:
 
@@ -23,9 +23,9 @@ Then when running the wercker CLI specify:
 wercker --environment /home/crperez/proxy_env.txt build --pipeline security-scan
 ```
 
-## HTTPS Proxy for gradle
+## HTTPS Proxy for gradle with wercker CLI
 
-To run the gradle build with a proxy server, update the properties file in ~/.gradle or create a gradle.properties file in the root of the project:
+To run the gradle build with a proxy server, update the properties file in your local ~/.gradle folder or create a gradle.properties file in the root of the gradle project:
 
 ```
 systemProp.http.proxyHost=proxy.company.com
@@ -42,10 +42,8 @@ See [https://www.owasp.org/index.php/OWASP_Dependency_Check](https://www.owasp.o
 
 # TODO
 
-- Abstract out the version of OWASP dependency-check that the Step uses
-- Additional Step parameters that map to OWASP dependency-check parameters
-- Look into the handling for Step failures when --failOnCVSS is below 10
-- ...
+- Abstract out the version of the OWASP dependency-check tool used when the Step executes
+- Add additional Step parameters that map to the OWASP dependency-check CLI parameters
 
 # getting-started-java
 

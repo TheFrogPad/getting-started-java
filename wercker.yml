@@ -67,9 +67,9 @@ security-scan:
     ### Use CVSS of 11 so that the step completes even when a CVE is discovered
     - thefrogpad/owasp-dependency-check:
         project: demo
-        scan: $WERCKER_OUTPUT_DIR/demo-1.0.jar
+        scan: $WERCKER_CACHE_DIR/demo-1.0.jar
         format: ALL
-        fail_on_cvss: "1"
+        fail_on_cvss: "11"
     - script:
         name: OWASP dependency-check details
         code: |

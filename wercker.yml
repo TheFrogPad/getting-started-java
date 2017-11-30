@@ -63,7 +63,7 @@ security-scan:
         project: demo
         scan: $WERCKER_CACHE_DIR/demo-1.0.jar
         format: ALL
-        fail_on_cvss: "11"
+        fail_on_cvss: "1"
     - script:
         name: OWASP dependency-check details
         code: |
